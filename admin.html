@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Pro-clean LCK</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b3a8c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 30 32 10l24 20' fill='none' stroke='%230b3a8c' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='24' y='30' width='16' height='16' rx='2' fill='%231d6fe0'/%3E%3Cpath d='M46 8c10 0 12 8 8 14-8 0-12-6-8-14z' fill='%2334a853'/%3E%3C/svg%3E" />
+</head>
+<body class="app-page admin-page">
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="site-header scrolled" id="top">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="index.html" class="logo" aria-label="Pro-clean LCK, retour à l'accueil">
+        <svg class="logo-mark" viewBox="0 0 64 56" aria-hidden="true">
+          <path d="M4 28 30 6l26 22" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="22" y="26" width="7" height="7" rx="1" fill="#1d6fe0"/><rect x="31" y="26" width="7" height="7" rx="1" fill="#1d6fe0"/>
+          <rect x="22" y="35" width="7" height="7" rx="1" fill="#1d6fe0"/><rect x="31" y="35" width="7" height="7" rx="1" fill="#1d6fe0"/>
+          <path class="logo-leaf" d="M46 4c12 0 14 9 10 16-10 0-14-7-10-16z" fill="#34a853"/>
+          <path d="M2 50c18-8 40-8 60 0" fill="none" stroke="#34a853" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Pro-clean <b>LCK</b></span>
+      </a>
+      <ul class="nav-menu app-nav">
+        <li><a href="index.html">← Retour au site</a></li>
+        <li class="nav-auth"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="app-main">
+    <div class="container">
+      <div class="app-hero">
+        <p class="pill">Espace admin</p>
+        <h1>Tableau de bord</h1>
+        <p class="app-sub">Gérez les demandes, les avis et les clients de Pro-clean LCK.</p>
+      </div>
+
+      <section class="app-card app-locked" id="locked" hidden aria-labelledby="locked-title">
+        <h2 id="locked-title">Accès réservé</h2>
+        <p id="locked-msg">Connectez-vous avec le compte administrateur.</p>
+        <div class="app-locked-btns"><button type="button" class="btn btn-green" data-auth="login">Se connecter</button></div>
+      </section>
+
+      <div id="app" hidden>
+        <ul class="kpis" aria-label="Chiffres clés">
+          <li class="kpi"><p class="kpi-n" id="k-wait">0</p><p>Demandes en attente</p></li>
+          <li class="kpi"><p class="kpi-n" id="k-ok">0</p><p>Confirmées</p></li>
+          <li class="kpi"><p class="kpi-n" id="k-done">0</p><p>Terminées</p></li>
+          <li class="kpi"><p class="kpi-n" id="k-rev">–</p><p>Note moyenne</p></li>
+          <li class="kpi"><p class="kpi-n" id="k-cli">0</p><p>Clients inscrits</p></li>
+        </ul>
+
+        <div class="app-tabs" role="tablist" aria-label="Sections admin">
+          <button type="button" role="tab" id="t-demandes" aria-controls="p-demandes" aria-selected="true">Demandes</button>
+          <button type="button" role="tab" id="t-avis" aria-controls="p-avis" aria-selected="false" tabindex="-1">Avis</button>
+          <button type="button" role="tab" id="t-clients" aria-controls="p-clients" aria-selected="false" tabindex="-1">Clients</button>
+        </div>
+
+        <section role="tabpanel" id="p-demandes" aria-labelledby="t-demandes" tabindex="0">
+          <div class="panel-head">
+            <h2>Demandes de service</h2>
+            <div class="toolbar">
+              <label for="f-status" class="sr-only">Filtrer par statut</label>
+              <select id="f-status">
+                <option value="all">Tous les statuts</option>
+                <option value="en_attente">En attente</option>
+                <option value="confirmee">Confirmées</option>
+                <option value="terminee">Terminées</option>
+                <option value="annulee">Annulées</option>
+              </select>
+              <label for="f-search" class="sr-only">Rechercher</label>
+              <input id="f-search" type="search" placeholder="Rechercher un nom, un quartier…" />
+            </div>
+          </div>
+          <ul class="item-list" id="req-list" role="list"></ul>
+          <p class="empty" id="req-empty" hidden>Aucune demande pour ce filtre.</p>
+        </section>
+
+        <section role="tabpanel" id="p-avis" aria-labelledby="t-avis" tabindex="0" hidden>
+          <div class="panel-head"><h2>Avis clients</h2></div>
+          <ul class="item-list" id="rev-list" role="list"></ul>
+          <p class="empty" id="rev-empty" hidden>Aucun avis pour le moment.</p>
+        </section>
+
+        <section role="tabpanel" id="p-clients" aria-labelledby="t-clients" tabindex="0" hidden>
+          <div class="panel-head"><h2>Clients inscrits</h2></div>
+          <div class="table-wrap">
+            <table class="data-table">
+              <caption class="sr-only">Liste des clients inscrits</caption>
+              <thead><tr><th scope="col">Nom</th><th scope="col">Téléphone</th><th scope="col">E-mail</th><th scope="col">Quartier</th><th scope="col">Inscrit le</th><th scope="col">Demandes</th></tr></thead>
+              <tbody id="cli-body"></tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="config.js?v=10" defer></script>
+  <script src="auth.js?v=10" defer></script>
+  <script src="admin.js?v=10" defer></script>
+</body>
+</html>

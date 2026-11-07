@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mon espace — Pro-clean LCK</title>
+  <meta name="robots" content="noindex" />
+  <meta name="theme-color" content="#0b3a8c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 30 32 10l24 20' fill='none' stroke='%230b3a8c' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='24' y='30' width='16' height='16' rx='2' fill='%231d6fe0'/%3E%3Cpath d='M46 8c10 0 12 8 8 14-8 0-12-6-8-14z' fill='%2334a853'/%3E%3C/svg%3E" />
+</head>
+<body class="app-page">
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <header class="site-header scrolled" id="top">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="index.html" class="logo" aria-label="Pro-clean LCK, retour à l'accueil">
+        <svg class="logo-mark" viewBox="0 0 64 56" aria-hidden="true">
+          <path d="M4 28 30 6l26 22" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="22" y="26" width="7" height="7" rx="1" fill="#1d6fe0"/><rect x="31" y="26" width="7" height="7" rx="1" fill="#1d6fe0"/>
+          <rect x="22" y="35" width="7" height="7" rx="1" fill="#1d6fe0"/><rect x="31" y="35" width="7" height="7" rx="1" fill="#1d6fe0"/>
+          <path class="logo-leaf" d="M46 4c12 0 14 9 10 16-10 0-14-7-10-16z" fill="#34a853"/>
+          <path d="M2 50c18-8 40-8 60 0" fill="none" stroke="#34a853" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Pro-clean <b>LCK</b></span>
+      </a>
+      <ul class="nav-menu app-nav">
+        <li><a href="index.html">← Retour au site</a></li>
+        <li class="nav-auth"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="app-main">
+    <div class="container">
+      <div class="app-hero reveal-soft">
+        <p class="pill">Mon espace</p>
+        <h1 id="hello">Bonjour&nbsp;!</h1>
+        <p class="app-sub">Suivez vos demandes, gérez vos avis et vos informations.</p>
+      </div>
+
+      <!-- Non connecté -->
+      <section class="app-card app-locked" id="locked" hidden aria-labelledby="locked-title">
+        <h2 id="locked-title">Connectez-vous pour accéder à votre espace</h2>
+        <p>Avec un compte gratuit, vous suivez vos demandes, les modifiez ou les annulez, et gérez vos avis.</p>
+        <div class="app-locked-btns">
+          <button type="button" class="btn btn-green" data-auth="login">Se connecter</button>
+          <button type="button" class="btn btn-ghost" data-auth="signup">Créer un compte</button>
+        </div>
+      </section>
+
+      <!-- Connecté -->
+      <div id="app" hidden>
+        <div class="app-tabs" role="tablist" aria-label="Sections de mon espace">
+          <button type="button" role="tab" id="t-demandes" aria-controls="p-demandes" aria-selected="true">Mes demandes <span class="count" id="c-demandes"></span></button>
+          <button type="button" role="tab" id="t-avis" aria-controls="p-avis" aria-selected="false" tabindex="-1">Mes avis <span class="count" id="c-avis"></span></button>
+          <button type="button" role="tab" id="t-profil" aria-controls="p-profil" aria-selected="false" tabindex="-1">Mon profil</button>
+        </div>
+
+        <!-- DEMANDES -->
+        <section role="tabpanel" id="p-demandes" aria-labelledby="t-demandes" tabindex="0">
+          <div class="panel-head">
+            <h2>Mes demandes de service</h2>
+            <a class="btn btn-green btn-sm" href="index.html#contact">+ Nouvelle demande</a>
+          </div>
+          <ul class="item-list" id="req-list" role="list"></ul>
+          <p class="empty" id="req-empty" hidden>Vous n'avez pas encore de demande. <a href="index.html#contact">Demander une soumission gratuite</a></p>
+        </section>
+
+        <!-- AVIS -->
+        <section role="tabpanel" id="p-avis" aria-labelledby="t-avis" tabindex="0" hidden>
+          <div class="panel-head">
+            <h2>Mes avis</h2>
+            <a class="btn btn-green btn-sm" href="index.html#avis">+ Donner un avis</a>
+          </div>
+          <ul class="item-list" id="rev-list" role="list"></ul>
+          <p class="empty" id="rev-empty" hidden>Vous n'avez pas encore laissé d'avis. <a href="index.html#avis">Donner mon avis</a></p>
+        </section>
+
+        <!-- PROFIL -->
+        <section role="tabpanel" id="p-profil" aria-labelledby="t-profil" tabindex="0" hidden>
+          <div class="profile-grid">
+            <form class="app-card" id="profile-form" novalidate>
+              <h2>Mes informations</h2>
+              <div class="field"><label for="pf-name">Nom complet</label><input id="pf-name" name="full_name" type="text" autocomplete="name" maxlength="60" required /></div>
+              <div class="field"><label for="pf-phone">Téléphone (WhatsApp)</label><input id="pf-phone" name="phone" type="tel" autocomplete="tel" maxlength="30" required /></div>
+              <div class="field"><label for="pf-area">Quartier</label><input id="pf-area" name="area" type="text" maxlength="60" placeholder="Ex. Bonamoussadi" /></div>
+              <div class="field"><label for="pf-email">E-mail</label><input id="pf-email" type="email" readonly aria-describedby="pf-email-help" /><p class="hint" id="pf-email-help">L'e-mail sert à vous connecter, il ne peut pas être modifié ici.</p></div>
+              <p class="error" id="pf-err" aria-live="polite"></p>
+              <button type="submit" class="btn btn-green">Enregistrer</button>
+            </form>
+
+            <div class="profile-side">
+              <form class="app-card" id="pass-form" novalidate>
+                <h2>Changer de mot de passe</h2>
+                <div class="field"><label for="pw-new">Nouveau mot de passe <small>(6 caractères minimum)</small></label><input id="pw-new" type="password" autocomplete="new-password" minlength="6" required /></div>
+                <p class="error" id="pw-err" aria-live="polite"></p>
+                <button type="submit" class="btn btn-ghost">Mettre à jour</button>
+              </form>
+
+              <div class="app-card">
+                <h2>Session</h2>
+                <button type="button" class="btn btn-ghost" id="logout">Se déconnecter</button>
+              </div>
+
+              <div class="app-card danger-zone">
+                <h2>Supprimer mon compte</h2>
+                <p>Votre compte, vos demandes et vos avis seront définitivement effacés.</p>
+                <button type="button" class="btn btn-danger" id="delete-account">Supprimer mon compte</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Fenêtre : modifier une demande -->
+  <dialog class="review-dialog" id="req-dialog" aria-labelledby="rq-title">
+    <form id="req-form" novalidate>
+      <div class="rd-head">
+        <h2 id="rq-title">Modifier ma demande</h2>
+        <button type="button" class="rd-close" data-close aria-label="Fermer la fenêtre">×</button>
+      </div>
+      <div class="field-row">
+        <div class="field"><label for="rq-name">Nom</label><input id="rq-name" name="name" type="text" maxlength="60" required /></div>
+        <div class="field"><label for="rq-phone">Téléphone</label><input id="rq-phone" name="phone" type="tel" maxlength="30" required /></div>
+      </div>
+      <fieldset class="field">
+        <legend>Services</legend>
+        <div class="chips" id="rq-services">
+          <label class="chip"><input type="checkbox" name="service" value="Ménage résidentiel" /><span>Résidentiel</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Ménage de bureaux" /><span>Bureaux</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Salles de bain" /><span>Salle de bain</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Cuisine" /><span>Cuisine</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Vitres" /><span>Vitres</span></label>
+          <label class="chip"><input type="checkbox" name="service" value="Grand ménage" /><span>Grand ménage</span></label>
+        </div>
+      </fieldset>
+      <div class="field-row">
+        <div class="field"><label for="rq-area">Quartier</label><input id="rq-area" name="area" type="text" maxlength="60" /></div>
+        <div class="field"><label for="rq-freq">Fréquence</label><select id="rq-freq" name="freq"><option>Ponctuel</option><option>Hebdomadaire</option><option>Mensuel</option></select></div>
+      </div>
+      <div class="field"><label for="rq-date">Date souhaitée</label><input id="rq-date" name="date" type="date" /></div>
+      <div class="field"><label for="rq-msg">Précisions</label><textarea id="rq-msg" name="msg" rows="3" maxlength="1000"></textarea></div>
+      <p class="error" id="rq-err" aria-live="polite"></p>
+      <button type="submit" class="btn btn-green btn-lg btn-block">Enregistrer les modifications</button>
+    </form>
+  </dialog>
+
+  <!-- Fenêtre : modifier un avis -->
+  <dialog class="review-dialog" id="rev-dialog" aria-labelledby="rv-title">
+    <form id="rev-form" novalidate>
+      <div class="rd-head">
+        <h2 id="rv-title">Modifier mon avis</h2>
+        <button type="button" class="rd-close" data-close aria-label="Fermer la fenêtre">×</button>
+      </div>
+      <fieldset class="field">
+        <legend>Note</legend>
+        <div class="star-input">
+          <input type="radio" name="rating" id="e5" value="5" /><label for="e5"><span class="sr-only">5 étoiles</span></label>
+          <input type="radio" name="rating" id="e4" value="4" /><label for="e4"><span class="sr-only">4 étoiles</span></label>
+          <input type="radio" name="rating" id="e3" value="3" /><label for="e3"><span class="sr-only">3 étoiles</span></label>
+          <input type="radio" name="rating" id="e2" value="2" /><label for="e2"><span class="sr-only">2 étoiles</span></label>
+          <input type="radio" name="rating" id="e1" value="1" /><label for="e1"><span class="sr-only">1 étoile</span></label>
+        </div>
+      </fieldset>
+      <div class="field-row">
+        <div class="field"><label for="ev-name">Prénom</label><input id="ev-name" name="name" type="text" maxlength="40" required /></div>
+        <div class="field"><label for="ev-area">Quartier</label><input id="ev-area" name="area" type="text" maxlength="40" /></div>
+      </div>
+      <div class="field"><label for="ev-service">Service reçu</label>
+        <select id="ev-service" name="service"><option>Ménage résidentiel</option><option>Ménage de bureaux</option><option>Salles de bain</option><option>Cuisine</option><option>Vitres</option><option>Grand ménage</option></select>
+      </div>
+      <div class="field"><label for="ev-comment">Commentaire</label><textarea id="ev-comment" name="comment" rows="4" maxlength="600" required></textarea></div>
+      <p class="error" id="ev-err" aria-live="polite"></p>
+      <button type="submit" class="btn btn-green btn-lg btn-block">Enregistrer</button>
+    </form>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="config.js?v=10" defer></script>
+  <script src="auth.js?v=10" defer></script>
+  <script src="compte.js?v=10" defer></script>
+</body>
+</html>

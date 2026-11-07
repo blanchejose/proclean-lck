@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pro-clean LCK — Service d'entretien ménager à Douala</title>
+  <meta name="description" content="Pro-clean LCK : ménage résidentiel, bureaux, salles de bain, cuisines, vitres. On se déplace dans toute la ville de Douala. Soumission gratuite sur WhatsApp." />
+  <meta name="theme-color" content="#0b3a8c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=10" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 30 32 10l24 20' fill='none' stroke='%230b3a8c' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='24' y='30' width='16' height='16' rx='2' fill='%231d6fe0'/%3E%3Cpath d='M46 8c10 0 12 8 8 14-8 0-12-6-8-14z' fill='%2334a853'/%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Icônes SVG réutilisables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 11 12 3l9 8v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="currentColor"/></symbol>
+    <symbol id="i-office" viewBox="0 0 24 24"><path d="M4 21V4a1 1 0 0 1 1-1h9a1 1 0 0 1 1 1v17M15 9h4a1 1 0 0 1 1 1v11M2 21h20M8 7h3M8 11h3M8 15h3M17 13h1M17 17h1" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-bath" viewBox="0 0 24 24"><path d="M3 12h18v2a6 6 0 0 1-6 6H9a6 6 0 0 1-6-6zM6 12V5a2 2 0 0 1 4 0M7 20l-1 2M17 20l1 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-kitchen" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 8h16M8 5.5h.01M12 5.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><rect x="8" y="11" width="8" height="6" rx="1" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-window" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3v18M3 12h18M6 7l2-2M15 7l2-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-spray" viewBox="0 0 24 24"><path d="M9 8h6v3l2 3v7a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-7l2-3zM10 8V5h5l2 2M19 4h.01M21 6h.01M19 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="currentColor"/><path d="M4 21a8 8 0 0 1 16 0z" fill="currentColor"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19C5 9 11 4 21 3c0 10-5 17-14 17M5 19l8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-price" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9zM8 8h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z" fill="currentColor"/></symbol>
+    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1.1c.2-.3.4-.2.7-.1l2 1c.3.1.5.2.5.3.1.2.1.6-.1 1.1z" fill="currentColor"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.3 7-12a7 7 0 0 0-14 0c0 5.7 7 12 7 12z" fill="currentColor"/><circle cx="12" cy="10" r="2.5" fill="#fff"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3 7 9 6 9-6" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-truck" viewBox="0 0 24 24"><path d="M2 6h11v10H2zM13 9h4l4 4v3h-8M6 19a2 2 0 1 0 0-.1M17 19a2 2 0 1 0 0-.1" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 2c.6 4.6 2.4 7.4 7 8-4.6.6-6.4 3.4-7 8-.6-4.6-2.4-7.4-7-8 4.6-.6 6.4-3.4 7-8z" fill="currentColor"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <div class="scroll-progress" aria-hidden="true"><span></span></div>
+
+  <header class="site-header" id="top">
+    <nav class="nav container" aria-label="Navigation principale">
+      <a href="#accueil" class="logo" aria-label="Pro-clean LCK, retour à l'accueil">
+        <svg class="logo-mark" viewBox="0 0 64 56" aria-hidden="true">
+          <path d="M4 28 30 6l26 22" fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="22" y="26" width="7" height="7" rx="1" fill="#1d6fe0"/><rect x="31" y="26" width="7" height="7" rx="1" fill="#1d6fe0"/>
+          <rect x="22" y="35" width="7" height="7" rx="1" fill="#1d6fe0"/><rect x="31" y="35" width="7" height="7" rx="1" fill="#1d6fe0"/>
+          <path class="logo-leaf" d="M46 4c12 0 14 9 10 16-10 0-14-7-10-16z" fill="#34a853"/>
+          <path d="M2 50c18-8 40-8 60 0" fill="none" stroke="#34a853" stroke-width="4" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Pro-clean <b>LCK</b></span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="menu" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <ul class="nav-menu" id="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#pourquoi">Pourquoi nous</a></li>
+        <li><a href="#methode">Notre méthode</a></li>
+        <li><a href="#avis">Avis</a></li>
+        <li><a href="#zone">Zone</a></li>
+        <li><a href="#contact" class="btn btn-sm btn-green">Soumission gratuite</a></li>
+        <li class="nav-auth"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="bubbles" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <p class="eyebrow reveal"><svg aria-hidden="true"><use href="#i-sparkle"/></svg> Service d'entretien ménager à Douala</p>
+          <h1 id="hero-title" class="reveal">
+            <span class="line">Service</span>
+            <span class="line">d'entretien</span>
+            <span class="script">ménager</span>
+          </h1>
+          <p class="hero-tagline reveal">Une maison propre, <em>sans effort&nbsp;!</em></p>
+          <p class="hero-sub reveal">Résidences, bureaux, cuisines, salles de bain, vitres… Nous prenons soin de vos espaces avec des produits de qualité, pour un environnement sain pour vous et votre famille.</p>
+          <div class="hero-cta reveal">
+            <a href="https://wa.me/237674488060?text=Bonjour%20Pro-clean%20LCK%2C%20je%20souhaite%20une%20soumission%20gratuite." class="btn btn-green btn-lg magnetic" target="_blank" rel="noopener">
+              <svg aria-hidden="true"><use href="#i-whatsapp"/></svg> Écrire sur WhatsApp
+              <span class="sr-only">(ouvre un nouvel onglet)</span>
+            </a>
+            <a href="#services" class="btn btn-ghost btn-lg">Voir nos services <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <ul class="hero-badges reveal" aria-label="Nos points forts">
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg> Soumission gratuite</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg> Horaires flexibles</li>
+            <li><svg aria-hidden="true"><use href="#i-check"/></svg> Tout Douala</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <div class="blob"></div>
+          <!-- Illustration seau + produits -->
+          <svg class="bucket-art" viewBox="0 0 400 400">
+            <defs>
+              <linearGradient id="gBlue" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#2a7cf0"/><stop offset="1" stop-color="#0b3a8c"/></linearGradient>
+              <linearGradient id="gGreen" x1="0" x2="1"><stop offset="0" stop-color="#5fd16f"/><stop offset="1" stop-color="#1f8f3a"/></linearGradient>
+            </defs>
+            <g class="bottle b1">
+              <rect x="120" y="90" width="60" height="150" rx="18" fill="url(#gGreen)"/>
+              <rect x="135" y="60" width="30" height="34" rx="4" fill="#e9f2ff"/>
+              <path d="M140 60h40l10-14h-55z" fill="#e9f2ff"/>
+              <rect x="132" y="140" width="36" height="40" rx="6" fill="#fff" opacity=".85"/>
+            </g>
+            <g class="bottle b2">
+              <rect x="200" y="70" width="64" height="170" rx="18" fill="url(#gBlue)"/>
+              <rect x="217" y="40" width="30" height="34" rx="4" fill="#e9f2ff"/>
+              <path d="M222 40h44l10-14h-60z" fill="#e9f2ff"/>
+              <rect x="212" y="130" width="40" height="46" rx="6" fill="#fff" opacity=".85"/>
+            </g>
+            <g class="glove"><path d="M292 170c10-10 30-6 34 8l14 90c2 14-10 24-22 22l-30-4c-12-2-18-14-14-26z" fill="#ffd21f"/><path d="M296 176l-12-40c-2-8 10-12 13-4l12 34M310 168l-6-46c-1-8 11-9 12-1l6 44M324 172l2-40c0-8 12-7 12 1l-2 44" fill="#ffd21f" stroke="#e6b800" stroke-width="2"/></g>
+            <path d="M70 210h260l-26 150c-2 12-12 20-24 20H120c-12 0-22-8-24-20z" fill="url(#gBlue)"/>
+            <rect x="60" y="196" width="280" height="26" rx="13" fill="#1d6fe0"/>
+            <path d="M90 236c40 10 180 10 220 0" stroke="#fff" stroke-opacity=".25" stroke-width="6" fill="none" stroke-linecap="round"/>
+            <path d="M84 222c60 16 172 16 232 0" fill="#34a853" opacity=".9"/>
+          </svg>
+          <div class="sparkles"><span></span><span></span><span></span><span></span><span></span></div>
+          <div class="eco-badge">
+            <svg aria-hidden="true"><use href="#i-leaf"/></svg>
+            <p>Un environnement <b>sain</b> pour vous et votre famille</p>
+          </div>
+        </div>
+      </div>
+      <a href="#services" class="scroll-hint" aria-label="Défiler vers les services"><span></span></a>
+      <svg class="wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60c240 60 480 60 720 20s480-60 720 0v40H0z" fill="currentColor"/></svg>
+    </section>
+
+    <!-- BANDEAU DÉFILANT -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Ménage résidentiel</span><span>✦</span><span>Bureaux</span><span>✦</span><span>Salles de bain</span><span>✦</span><span>Cuisines</span><span>✦</span><span>Vitres</span><span>✦</span><span>Grand ménage</span><span>✦</span>
+        <span>Ménage résidentiel</span><span>✦</span><span>Bureaux</span><span>✦</span><span>Salles de bain</span><span>✦</span><span>Cuisines</span><span>✦</span><span>Vitres</span><span>✦</span><span>Grand ménage</span><span>✦</span>
+      </div>
+    </div>
+
+    <!-- SERVICES -->
+    <section class="section services" id="services" aria-labelledby="services-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="pill">Nos services</p>
+          <h2 id="services-title">Tout ce qu'il faut pour un espace <span class="hl">impeccable</span></h2>
+          <p>Choisissez le service adapté à vos besoins — ponctuel ou régulier.</p>
+        </header>
+
+        <ul class="cards" role="list">
+          <li class="card reveal tilt" style="--d:0">
+            <div class="card-icon c-green"><svg aria-hidden="true"><use href="#i-home"/></svg></div>
+            <h3>Ménage résidentiel</h3>
+            <p>Maisons et appartements nettoyés du sol au plafond : dépoussiérage, sols, chambres, salons.</p>
+          </li>
+          <li class="card reveal tilt" style="--d:1">
+            <div class="card-icon c-blue"><svg aria-hidden="true"><use href="#i-office"/></svg></div>
+            <h3>Ménage de bureaux</h3>
+            <p>Des locaux propres pour des équipes motivées et une image professionnelle auprès de vos clients.</p>
+          </li>
+          <li class="card reveal tilt" style="--d:2">
+            <div class="card-icon c-green"><svg aria-hidden="true"><use href="#i-bath"/></svg></div>
+            <h3>Salles de bain</h3>
+            <p>Détartrage, désinfection des sanitaires, carrelage et robinetterie qui brillent.</p>
+          </li>
+          <li class="card reveal tilt" style="--d:3">
+            <div class="card-icon c-blue"><svg aria-hidden="true"><use href="#i-kitchen"/></svg></div>
+            <h3>Cuisines</h3>
+            <p>Dégraissage des plans de travail, plaques, hottes et électroménager.</p>
+          </li>
+          <li class="card reveal tilt" style="--d:4">
+            <div class="card-icon c-green"><svg aria-hidden="true"><use href="#i-window"/></svg></div>
+            <h3>Lavage des vitres <small>(sur demande)</small></h3>
+            <p>Vitres et baies vitrées sans traces pour laisser entrer toute la lumière.</p>
+          </li>
+          <li class="card reveal tilt" style="--d:5">
+            <div class="card-icon c-blue"><svg aria-hidden="true"><use href="#i-spray"/></svg></div>
+            <h3>Entretien régulier ou grand ménage</h3>
+            <p>Une formule hebdomadaire, mensuelle, ou un grand nettoyage en profondeur.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- POURQUOI -->
+    <section class="section why" id="pourquoi" aria-labelledby="why-title">
+      <div class="container why-grid">
+        <div class="why-text">
+          <header class="section-head left reveal">
+            <p class="pill pill-light">Pourquoi nous choisir&nbsp;?</p>
+            <h2 id="why-title">Votre satisfaction est <span class="script-inline">notre priorité&nbsp;!</span></h2>
+          </header>
+          <ul class="why-list" role="list">
+            <li class="reveal" style="--d:0"><span class="why-ico"><svg aria-hidden="true"><use href="#i-user"/></svg></span><div><h3>Service fiable et professionnel</h3><p>Ponctualité, discrétion et travail soigné à chaque intervention.</p></div></li>
+            <li class="reveal" style="--d:1"><span class="why-ico"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><div><h3>Produits de qualité</h3><p>Des produits efficaces et respectueux de votre santé et de vos surfaces.</p></div></li>
+            <li class="reveal" style="--d:2"><span class="why-ico"><svg aria-hidden="true"><use href="#i-price"/></svg></span><div><h3>Prix compétitifs</h3><p>Des tarifs clairs et adaptés, avec une soumission gratuite avant toute intervention.</p></div></li>
+            <li class="reveal" style="--d:3"><span class="why-ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><div><h3>Service personnalisé</h3><p>On s'adapte à vos besoins, vos priorités et votre emploi du temps.</p></div></li>
+          </ul>
+        </div>
+        <div class="why-visual reveal" aria-hidden="true">
+          <div class="before-after" id="ba">
+            <div class="ba-dirty"><span class="ba-label">Avant</span></div>
+            <div class="ba-clean"><span class="ba-label">Après</span></div>
+            <div class="ba-handle"><span></span></div>
+          </div>
+        </div>
+      </div>
+      <!-- slider accessible (contrôle réel, l'image au-dessus est décorative) -->
+      <div class="container ba-control reveal">
+        <label for="ba-range">Glissez pour comparer avant / après</label>
+        <input type="range" id="ba-range" min="0" max="100" value="50" aria-valuetext="50 % nettoyé" />
+      </div>
+    </section>
+
+    <!-- CHIFFRES -->
+    <section class="stats" aria-label="Nos engagements en chiffres">
+      <div class="container stats-grid">
+        <div class="stat reveal"><p class="num"><span data-count="100">0</span>%</p><p>Soumission gratuite</p></div>
+        <div class="stat reveal"><p class="num"><span data-count="6">0</span></p><p>Services proposés</p></div>
+        <div class="stat reveal"><p class="num"><span data-count="7">0</span>j/7</p><p>Horaires flexibles</p></div>
+        <div class="stat reveal"><p class="num"><span data-count="1">0</span></p><p>Ville couverte en entier : Douala</p></div>
+      </div>
+    </section>
+
+    <!-- MÉTHODE -->
+    <section class="section steps-sec" id="methode" aria-labelledby="steps-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="pill">Comment ça marche</p>
+          <h2 id="steps-title">Une maison propre en <span class="hl">3 étapes</span></h2>
+        </header>
+        <ol class="steps">
+          <li class="step reveal" style="--d:0"><span class="step-n">1</span><h3>Vous nous contactez</h3><p>Par WhatsApp, e-mail ou via le formulaire ci-dessous.</p></li>
+          <li class="step reveal" style="--d:1"><span class="step-n">2</span><h3>Soumission gratuite</h3><p>On évalue vos besoins et on vous propose un prix clair.</p></li>
+          <li class="step reveal" style="--d:2"><span class="step-n">3</span><h3>On nettoie, vous profitez</h3><p>Notre équipe intervient à l'heure qui vous convient.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- AVIS CLIENTS -->
+    <section class="section reviews" id="avis" aria-labelledby="reviews-title">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="pill">Avis clients</p>
+          <h2 id="reviews-title">Ils nous ont fait <span class="hl">confiance</span></h2>
+          <p>Lisez les avis laissés par nos clients après chaque intervention, puis réservez le même service en un clic.</p>
+        </header>
+
+        <div class="reviews-summary reveal" id="reviews-summary" aria-live="polite">
+          <div class="rs-score">
+            <p class="rs-avg"><span id="rs-avg">–</span><small>/5</small></p>
+            <p class="rs-stars" id="rs-stars" aria-hidden="true"></p>
+            <p class="rs-count" id="rs-count">Chargement des avis…</p>
+          </div>
+          <ul class="rs-bars" id="rs-bars" aria-label="Répartition des notes"></ul>
+          <div class="rs-cta">
+            <p>Vous avez fait appel à nous&nbsp;?</p>
+            <button type="button" class="btn btn-green" id="open-review">
+              <svg aria-hidden="true"><use href="#i-sparkle"/></svg> Donner mon avis
+            </button>
+          </div>
+        </div>
+
+        <div class="review-filters reveal" role="group" aria-label="Filtrer les avis par service">
+          <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">Tous</button>
+          <button type="button" class="filter" data-filter="Ménage résidentiel" aria-pressed="false">Résidentiel</button>
+          <button type="button" class="filter" data-filter="Ménage de bureaux" aria-pressed="false">Bureaux</button>
+          <button type="button" class="filter" data-filter="Salles de bain" aria-pressed="false">Salle de bain</button>
+          <button type="button" class="filter" data-filter="Cuisine" aria-pressed="false">Cuisine</button>
+          <button type="button" class="filter" data-filter="Vitres" aria-pressed="false">Vitres</button>
+          <button type="button" class="filter" data-filter="Grand ménage" aria-pressed="false">Grand ménage</button>
+        </div>
+
+        <ul class="review-list" id="review-list" role="list" aria-live="polite"></ul>
+        <p class="reviews-empty" id="reviews-empty" hidden>Aucun avis pour l'instant. Soyez le premier à partager votre expérience&nbsp;!</p>
+        <div class="reviews-more"><button type="button" class="btn btn-ghost" id="more-reviews" hidden>Voir plus d'avis</button></div>
+      </div>
+    </section>
+
+    <!-- Fenêtre : laisser un avis -->
+    <dialog class="review-dialog" id="review-dialog" aria-labelledby="rd-title">
+      <form id="review-form" novalidate>
+        <div class="rd-head">
+          <h2 id="rd-title">Votre avis compte&nbsp;!</h2>
+          <button type="button" class="rd-close" id="rd-close" data-close aria-label="Fermer la fenêtre">×</button>
+        </div>
+
+        <fieldset class="field">
+          <legend>Votre note <span aria-hidden="true">*</span></legend>
+          <div class="star-input" id="star-input">
+            <input type="radio" name="rating" id="r5" value="5" /><label for="r5" title="Excellent"><span class="sr-only">5 étoiles, excellent</span></label>
+            <input type="radio" name="rating" id="r4" value="4" /><label for="r4" title="Très bien"><span class="sr-only">4 étoiles, très bien</span></label>
+            <input type="radio" name="rating" id="r3" value="3" /><label for="r3" title="Bien"><span class="sr-only">3 étoiles, bien</span></label>
+            <input type="radio" name="rating" id="r2" value="2" /><label for="r2" title="Moyen"><span class="sr-only">2 étoiles, moyen</span></label>
+            <input type="radio" name="rating" id="r1" value="1" /><label for="r1" title="Décevant"><span class="sr-only">1 étoile, décevant</span></label>
+          </div>
+          <p class="star-word" id="star-word" aria-hidden="true">Touchez une étoile</p>
+          <p class="error" id="re-rating" aria-live="polite"></p>
+        </fieldset>
+
+        <div class="field-row">
+          <div class="field">
+            <label for="rv-name">Prénom <span aria-hidden="true">*</span></label>
+            <input id="rv-name" name="name" type="text" autocomplete="given-name" maxlength="40" required aria-describedby="re-name" />
+            <p class="error" id="re-name" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="rv-area">Quartier</label>
+            <input id="rv-area" name="area" type="text" maxlength="40" placeholder="Ex. Makepe" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rv-service">Service reçu <span aria-hidden="true">*</span></label>
+          <select id="rv-service" name="service" required aria-describedby="re-service">
+            <option value="">— Choisir —</option>
+            <option>Ménage résidentiel</option>
+            <option>Ménage de bureaux</option>
+            <option>Salles de bain</option>
+            <option>Cuisine</option>
+            <option>Vitres</option>
+            <option>Grand ménage</option>
+          </select>
+          <p class="error" id="re-service" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="rv-comment">Votre commentaire <span aria-hidden="true">*</span></label>
+          <textarea id="rv-comment" name="comment" rows="4" maxlength="600" required aria-describedby="re-comment rv-count"></textarea>
+          <p class="char-count" id="rv-count">0 / 600</p>
+          <p class="error" id="re-comment" aria-live="polite"></p>
+        </div>
+        <!-- piège anti-robots, invisible pour les humains -->
+        <div class="hp" aria-hidden="true"><label for="rv-website">Site web</label><input id="rv-website" name="website" type="text" tabindex="-1" autocomplete="off" /></div>
+
+        <button type="submit" class="btn btn-green btn-lg btn-block" id="rv-submit">Publier mon avis</button>
+        <p class="form-status" id="rv-status" role="status" aria-live="polite"></p>
+      </form>
+    </dialog>
+
+    <!-- ZONE -->
+    <section class="zone" id="zone" aria-labelledby="zone-title">
+      <div class="container zone-inner reveal">
+        <div class="truck-wrap" aria-hidden="true">
+          <svg class="truck"><use href="#i-truck"/></svg>
+          <span class="speed"></span><span class="speed"></span><span class="speed"></span>
+        </div>
+        <h2 id="zone-title">On se déplace dans toute la ville de <span>Douala&nbsp;!</span></h2>
+        <p>Akwa, Bonanjo, Bonapriso, Bonamoussadi, Makepe, Logpom, Deïdo, Bali, Kotto, Ndokoti… où que vous soyez, nous venons à vous.</p>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <div class="quote-badge" aria-hidden="true"><span>Obtenez une</span><b>soumission</b><span>gratuite&nbsp;!</span></div>
+          <h2 id="contact-title">Prenez rendez-vous <span class="script-inline">dès aujourd'hui&nbsp;!</span></h2>
+          <ul class="contact-list" role="list">
+            <li><span class="ci ci-wa"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span><div><p class="ci-k">WhatsApp</p><a href="https://wa.me/237674488060" target="_blank" rel="noopener">+237 674 488 060<span class="sr-only"> (ouvre WhatsApp dans un nouvel onglet)</span></a></div></li>
+            <li><span class="ci"><svg aria-hidden="true"><use href="#i-pin"/></svg></span><div><p class="ci-k">Localisation</p><p>Douala — on se déplace dans toute la ville&nbsp;!</p></div></li>
+            <li><span class="ci"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><div><p class="ci-k">Horaire</p><p>Flexible</p></div></li>
+            <li><span class="ci"><svg aria-hidden="true"><use href="#i-mail"/></svg></span><div><p class="ci-k">E-mail</p><a href="mailto:latchced@gmail.com">latchced@gmail.com</a></div></li>
+          </ul>
+        </div>
+
+        <form class="quote-form reveal" id="quote-form" novalidate aria-describedby="form-help">
+          <h3>Demander ma soumission gratuite</h3>
+          <div class="form-gate" id="form-gate" hidden>
+            <span class="gate-ico" aria-hidden="true"><svg><use href="#i-user"/></svg></span>
+            <p class="gate-title">Connectez-vous pour faire votre demande</p>
+            <p>Avec un compte gratuit, vous suivez votre demande, vous la modifiez ou vous l'annulez quand vous voulez.</p>
+            <div class="gate-btns">
+              <button type="button" class="btn btn-green btn-lg" data-gate="login">Se connecter</button>
+              <button type="button" class="btn btn-ghost btn-lg" data-gate="signup">Créer un compte gratuit</button>
+            </div>
+            <p class="gate-alt">Pressé(e)&nbsp;? <a href="https://wa.me/237674488060" target="_blank" rel="noopener">Écrivez-nous directement sur WhatsApp<span class="sr-only"> (nouvel onglet)</span></a></p>
+          </div>
+          <div class="form-body" id="form-body">
+          <p id="form-help" class="form-help">Les champs marqués d'un <span aria-hidden="true">*</span><span class="sr-only">astérisque</span> sont obligatoires. Vous pourrez suivre, modifier ou annuler votre demande dans «&nbsp;Mon espace&nbsp;».</p>
+
+          <div class="field">
+            <label for="f-name">Nom complet <span aria-hidden="true">*</span></label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required aria-describedby="e-name" />
+            <p class="error" id="e-name" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-phone">Téléphone <span aria-hidden="true">*</span></label>
+            <input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required placeholder="6XX XXX XXX" aria-describedby="e-phone" />
+            <p class="error" id="e-phone" aria-live="polite"></p>
+          </div>
+
+          <fieldset class="field">
+            <legend>Service souhaité <span aria-hidden="true">*</span></legend>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="service" value="Ménage résidentiel" /><span>Résidentiel</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Ménage de bureaux" /><span>Bureaux</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Salles de bain" /><span>Salle de bain</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Cuisine" /><span>Cuisine</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Vitres" /><span>Vitres</span></label>
+              <label class="chip"><input type="checkbox" name="service" value="Grand ménage" /><span>Grand ménage</span></label>
+            </div>
+            <p class="error" id="e-service" aria-live="polite"></p>
+          </fieldset>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="f-area">Quartier</label>
+              <input id="f-area" name="area" type="text" placeholder="Ex. Bonamoussadi" />
+            </div>
+            <div class="field">
+              <label for="f-freq">Fréquence</label>
+              <select id="f-freq" name="freq">
+                <option>Ponctuel</option>
+                <option>Hebdomadaire</option>
+                <option>Mensuel</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-date">Date souhaitée (optionnel)</label>
+            <input id="f-date" name="date" type="date" />
+          </div>
+          <div class="field">
+            <label for="f-msg">Précisions (optionnel)</label>
+            <textarea id="f-msg" name="msg" rows="3" placeholder="Taille du logement, date souhaitée…"></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-green btn-lg btn-block magnetic">
+            <svg aria-hidden="true"><use href="#i-arrow"/></svg> Envoyer ma demande
+          </button>
+          <p class="form-status" role="status" aria-live="polite"></p>
+          <div class="form-done" id="form-done" hidden>
+            <a class="btn btn-ghost" href="compte.html">Suivre ma demande</a>
+            <a class="btn btn-green" id="wa-notify" href="https://wa.me/237674488060" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg> Prévenir sur WhatsApp<span class="sr-only"> (nouvel onglet)</span></a>
+          </div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="logo-text">Pro-clean <b>LCK</b></p>
+      <p>Service d'entretien ménager — Douala, Cameroun</p>
+      <p><a href="https://wa.me/237674488060" target="_blank" rel="noopener">WhatsApp<span class="sr-only"> (nouvel onglet)</span></a> · <a href="mailto:latchced@gmail.com">E-mail</a> · <a href="#top">Haut de page ↑</a></p>
+      <p class="copy">© <span id="year">2026</span> Pro-clean LCK. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <!-- Bouton WhatsApp flottant -->
+  <a class="wa-float" href="https://wa.me/237674488060?text=Bonjour%20Pro-clean%20LCK%20!" target="_blank" rel="noopener" aria-label="Contacter Pro-clean LCK sur WhatsApp (nouvel onglet)">
+    <svg aria-hidden="true"><use href="#i-whatsapp"/></svg>
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+  <script src="config.js?v=10" defer></script>
+  <script src="auth.js?v=10" defer></script>
+  <script src="script.js?v=10" defer></script>
+  <script src="reviews.js?v=10" defer></script>
+</body>
+</html>
