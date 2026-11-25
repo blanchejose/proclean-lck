@@ -282,34 +282,16 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
   border: 6px solid rgba(255,255,255,.2);
 }
 .ba-dirty, .ba-clean { position: absolute; inset: 0; }
-/* Photo : Unsplash (licence Unsplash, libre). Même vraie photo des deux côtés : propre à droite, « salie » à gauche */
-.ba-clean, .ba-dirty::before { background: url("img/piece.jpg") center / cover no-repeat; }
-.ba-clean { filter: brightness(1.04) saturate(1.08); }
-.ba-clean::after { /* éclats de propreté */
-  content: ""; position: absolute; inset: 0; pointer-events: none;
-  background:
-    radial-gradient(circle at 78% 30%, #fff 0 2px, transparent 3px),
-    radial-gradient(circle at 64% 62%, #fff 0 2px, transparent 3px),
-    radial-gradient(circle at 88% 74%, #fff 0 1.5px, transparent 2.5px),
-    radial-gradient(circle at 70% 16%, #fff 0 1.5px, transparent 2.5px);
-  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 10px #fff); animation: sparkle 2.6s ease-in-out infinite;
-}
-.ba-dirty { clip-path: inset(0 calc(100% - var(--pos)) 0 0); z-index: 2; }
-.ba-dirty::before { content: ""; position: absolute; inset: 0; filter: sepia(.6) saturate(.5) brightness(.68) contrast(.9); }
-.ba-dirty::after { /* taches, poussière, traînées */
-  content: ""; position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse 14% 7% at 30% 88%, rgba(70,48,20,.75), transparent 70%),
-    radial-gradient(ellipse 9% 5% at 55% 80%, rgba(70,48,20,.7), transparent 70%),
-    radial-gradient(ellipse 18% 9% at 18% 70%, rgba(85,60,25,.55), transparent 70%),
-    radial-gradient(ellipse 10% 14% at 40% 40%, rgba(90,70,40,.3), transparent 70%),
-    repeating-linear-gradient(100deg, transparent 0 38px, rgba(110,90,55,.12) 38px 44px),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='b'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='4' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .32 0 0 0 0 .24 0 0 0 0 .12 0 0 0 3.2 -1.7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23b)'/%3E%3C/svg%3E"),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .35 0 0 0 0 .27 0 0 0 0 .15 0 0 0 1.6 -.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"),
-    linear-gradient(180deg, rgba(95,80,50,.25), rgba(60,45,20,.35));
-  background-size: auto, auto, auto, auto, auto, cover, 300px 300px, auto;
-  mix-blend-mode: multiply;
-}
+/* Photo four : moitié gauche = sale, moitié droite = propre.
+   Chaque côté est recomposé avec sa moitié + son reflet (le four est symétrique). */
+.ba-clean { background: #222; }
+.ba-dirty { clip-path: inset(0 calc(100% - var(--pos)) 0 0); z-index: 2; background: #222; }
+.ba-half { position: absolute; top: 0; bottom: 0; width: 50%; background-image: url("img/four.jpg?v=1"); background-repeat: no-repeat; }
+.ba-half.l { left: 0; } .ba-half.r { left: 50%; }
+.ba-dirty .ba-half { background-size: 204.7% 100%; background-position: left center; }
+.ba-dirty .ba-half.r { transform: scaleX(-1); }
+.ba-clean .ba-half { background-size: 200% 100%; background-position: right center; }
+.ba-clean .ba-half.l { transform: scaleX(-1); }
 .ba-label { position: absolute; top: 1rem; padding: .3rem .9rem; border-radius: 999px; font-weight: 700; font-size: .9rem; z-index: 3; }
 .ba-dirty .ba-label { left: 1rem; background: #4a3b22; color: #fff; }
 .ba-clean .ba-label { right: 1rem; background: var(--green-700); color: #fff; }
