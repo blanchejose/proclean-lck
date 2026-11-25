@@ -249,11 +249,26 @@
     PC.toast('Demande envoyée !');
   });
 
-  /* Choisir un lieu → pré-remplit le formulaire de demande */
+  /* Services : onglets Particuliers / Professionnels */
+  const seg = document.querySelector('.seg');
+  const movePill = () => {
+    const t = seg.querySelector('[aria-selected=true]');
+    seg.style.setProperty('--x', t.offsetLeft + 'px');
+    seg.style.setProperty('--w', t.offsetWidth + 'px');
+  };
+  PC.setupTabs(seg, movePill);
+  movePill();
+  addEventListener('resize', movePill);
+  document.fonts?.ready.then(movePill);
+
+  /* Toucher un service → pré-remplit le formulaire de demande */
   document.querySelectorAll('.place[data-place]').forEach((b) => b.addEventListener('click', () => {
     F.place.value = b.dataset.place;
+    if (b.dataset.service) {
+      form.querySelectorAll('input[name="service"]').forEach((c) => { c.checked = c.value === b.dataset.service; });
+    }
     document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    PC.toast(`Lieu choisi : ${b.dataset.place}`);
+    PC.toast(`${b.querySelector('strong').textContent} : on prépare votre demande`);
     setTimeout(() => (F.place.disabled ? form.querySelector('[data-gate]') : F.place)?.focus({ preventScroll: true }), 700);
   }));
 

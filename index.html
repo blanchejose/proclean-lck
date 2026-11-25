@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=11" />
+  <link rel="stylesheet" href="styles.css?v=12" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 30 32 10l24 20' fill='none' stroke='%230b3a8c' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='24' y='30' width='16' height='16' rx='2' fill='%231d6fe0'/%3E%3Cpath d='M46 8c10 0 12 8 8 14-8 0-12-6-8-14z' fill='%2334a853'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -68,7 +68,6 @@
 
       <ul class="nav-menu" id="menu">
         <li><a href="#services">Services</a></li>
-        <li><a href="#lieux">Lieux</a></li>
         <li><a href="#pourquoi">Pourquoi nous</a></li>
         <li><a href="#methode">Notre méthode</a></li>
         <li><a href="#avis">Avis</a></li>
@@ -152,136 +151,158 @@
       </div>
     </div>
 
-    <!-- SERVICES -->
+    <!-- SERVICES (particuliers / professionnels) -->
     <section class="section services" id="services" aria-labelledby="services-title">
       <div class="container">
         <header class="section-head reveal">
           <p class="pill">Nos services</p>
           <h2 id="services-title">Tout ce qu'il faut pour un espace <span class="hl">impeccable</span></h2>
-          <p>Choisissez le service adapté à vos besoins — ponctuel ou régulier.</p>
+          <p>Choisissez votre profil, puis touchez un service pour demander une soumission gratuite.</p>
         </header>
 
-        <ul class="cards" role="list">
-          <li class="card reveal tilt" style="--d:0">
-            <div class="card-icon c-green"><svg aria-hidden="true"><use href="#i-home"/></svg></div>
-            <h3>Ménage résidentiel</h3>
-            <p>Maisons et appartements nettoyés du sol au plafond : dépoussiérage, sols, chambres, salons.</p>
-          </li>
-          <li class="card reveal tilt" style="--d:1">
-            <div class="card-icon c-blue"><svg aria-hidden="true"><use href="#i-office"/></svg></div>
-            <h3>Ménage de bureaux</h3>
-            <p>Des locaux propres pour des équipes motivées et une image professionnelle auprès de vos clients.</p>
-          </li>
-          <li class="card reveal tilt" style="--d:2">
-            <div class="card-icon c-green"><svg aria-hidden="true"><use href="#i-bath"/></svg></div>
-            <h3>Salles de bain</h3>
-            <p>Détartrage, désinfection des sanitaires, carrelage et robinetterie qui brillent.</p>
-          </li>
-          <li class="card reveal tilt" style="--d:3">
-            <div class="card-icon c-blue"><svg aria-hidden="true"><use href="#i-kitchen"/></svg></div>
-            <h3>Cuisines</h3>
-            <p>Dégraissage des plans de travail, plaques, hottes et électroménager.</p>
-          </li>
-          <li class="card reveal tilt" style="--d:4">
-            <div class="card-icon c-green"><svg aria-hidden="true"><use href="#i-window"/></svg></div>
-            <h3>Lavage des vitres <small>(sur demande)</small></h3>
-            <p>Vitres et baies vitrées sans traces pour laisser entrer toute la lumière.</p>
-          </li>
-          <li class="card reveal tilt" style="--d:5">
-            <div class="card-icon c-blue"><svg aria-hidden="true"><use href="#i-spray"/></svg></div>
-            <h3>Entretien régulier ou grand ménage</h3>
-            <p>Une formule hebdomadaire, mensuelle, ou un grand nettoyage en profondeur.</p>
-          </li>
-        </ul>
-      </div>
-    </section>
+        <div class="seg reveal" role="tablist" aria-label="Type de client">
+          <span class="seg-pill" aria-hidden="true"></span>
+          <button type="button" role="tab" id="tab-part" aria-controls="pan-part" aria-selected="true">
+            <svg aria-hidden="true"><use href="#i-home"/></svg> Particuliers
+          </button>
+          <button type="button" role="tab" id="tab-pro" aria-controls="pan-pro" aria-selected="false" tabindex="-1">
+            <svg aria-hidden="true"><use href="#i-office"/></svg> Professionnels
+          </button>
+        </div>
 
-    <!-- LIEUX -->
-    <section class="section places" id="lieux" aria-labelledby="places-title">
-      <div class="container">
-        <header class="section-head reveal">
-          <p class="pill">Particuliers et professionnels</p>
-          <h2 id="places-title">Nous nettoyons <span class="hl">tous vos lieux</span></h2>
-          <p>De la maison à l'hôtel, de l'école à la boîte de nuit. Choisissez votre lieu pour demander une soumission gratuite.</p>
-        </header>
-        <ul class="places-grid" role="list">
-          <li class="reveal" style="--d:0">
-            <button type="button" class="place" data-place="Écoles et universités">
-              <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-school"/></svg></span>
-              <span class="place-txt"><strong>Écoles et universités</strong><small>Salles de classe, couloirs, sanitaires et cantines.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:1">
-            <button type="button" class="place" data-place="Hôtels et motels">
-              <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-hotel"/></svg></span>
-              <span class="place-txt"><strong>Hôtels et motels</strong><small>Chambres, halls, salles de bain : vos clients arrivent dans le propre.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:2">
-            <button type="button" class="place" data-place="Restaurants et snacks">
-              <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-food"/></svg></span>
-              <span class="place-txt"><strong>Restaurants et snacks</strong><small>Salle, cuisine et dégraissage, avant ou après le service.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:3">
-            <button type="button" class="place" data-place="Boîtes de nuit et bars">
-              <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-glass"/></svg></span>
-              <span class="place-txt"><strong>Boîtes de nuit et bars</strong><small>Remise en état rapide après la soirée, prêt pour le soir suivant.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:4">
-            <button type="button" class="place" data-place="Cliniques et pharmacies">
-              <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-cross"/></svg></span>
-              <span class="place-txt"><strong>Cliniques et pharmacies</strong><small>Nettoyage et désinfection soignés des espaces d’accueil.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:0">
-            <button type="button" class="place" data-place="Églises et lieux de culte">
-              <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-church"/></svg></span>
-              <span class="place-txt"><strong>Églises et lieux de culte</strong><small>Salles, bancs et abords entretenus pour vos rassemblements.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:1">
-            <button type="button" class="place" data-place="Boutiques et supermarchés">
-              <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-shop"/></svg></span>
-              <span class="place-txt"><strong>Boutiques et supermarchés</strong><small>Vitrines, rayons et sols impeccables pour vos clients.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:2">
-            <button type="button" class="place" data-place="Salles de fêtes et événements">
-              <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-party"/></svg></span>
-              <span class="place-txt"><strong>Salles de fêtes et événements</strong><small>Avant et après mariages, anniversaires et réceptions.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:3">
-            <button type="button" class="place" data-place="Immeubles et parties communes">
-              <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-build"/></svg></span>
-              <span class="place-txt"><strong>Immeubles et parties communes</strong><small>Escaliers, halls et couloirs entretenus régulièrement.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:4">
-            <button type="button" class="place" data-place="Fin de chantier">
-              <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-helmet"/></svg></span>
-              <span class="place-txt"><strong>Fin de chantier</strong><small>Poussière et traces de travaux enlevées avant d’emménager.</small></span>
-              <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
-            </button>
-          </li>
-          <li class="reveal" style="--d:0">
-            <a class="place place-more" href="https://wa.me/237674488060?text=Bonjour%20Pro-clean%20LCK%2C%20j%27aimerais%20faire%20nettoyer%20un%20lieu%20%3A%20" target="_blank" rel="noopener">
-              <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-              <span class="place-txt"><strong>Et bien d'autres…</strong><small>Votre lieu n'est pas dans la liste&nbsp;? Écrivez-nous sur WhatsApp.<span class="sr-only"> (nouvelle fenêtre)</span></small></span>
-            </a>
-          </li>
-        </ul>
+        <div class="svc-panel" role="tabpanel" id="pan-part" aria-labelledby="tab-part" tabindex="0">
+          <ul class="places-grid" role="list">
+            <li style="--k:0">
+              <button type="button" class="place" data-place="Maison / appartement" data-service="Ménage résidentiel">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-home"/></svg></span>
+                <span class="place-txt"><strong>Ménage résidentiel</strong><small>Maisons et appartements, du sol au plafond.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:1">
+              <button type="button" class="place" data-place="Maison / appartement" data-service="Salles de bain">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-bath"/></svg></span>
+                <span class="place-txt"><strong>Salles de bain</strong><small>Détartrage, désinfection, robinetterie qui brille.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:2">
+              <button type="button" class="place" data-place="Maison / appartement" data-service="Cuisine">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-kitchen"/></svg></span>
+                <span class="place-txt"><strong>Cuisines</strong><small>Plans de travail, plaques, hottes dégraissés.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:3">
+              <button type="button" class="place" data-place="Maison / appartement" data-service="Vitres">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-window"/></svg></span>
+                <span class="place-txt"><strong>Vitres</strong><small>Sans traces, sur demande.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:4">
+              <button type="button" class="place" data-place="Maison / appartement" data-service="Grand ménage">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-spray"/></svg></span>
+                <span class="place-txt"><strong>Grand ménage</strong><small>Ponctuel, hebdomadaire ou mensuel.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:5">
+              <button type="button" class="place" data-place="Fin de chantier" data-service="Grand ménage">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-helmet"/></svg></span>
+                <span class="place-txt"><strong>Fin de chantier</strong><small>Avant d’emménager, après les travaux.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+          </ul>
+        </div>
+        <div class="svc-panel" role="tabpanel" id="pan-pro" aria-labelledby="tab-pro" tabindex="0" hidden>
+          <ul class="places-grid" role="list">
+            <li style="--k:0">
+              <button type="button" class="place" data-place="Bureau" data-service="Ménage de bureaux">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-office"/></svg></span>
+                <span class="place-txt"><strong>Bureaux</strong><small>Des locaux propres pour vos équipes.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:1">
+              <button type="button" class="place" data-place="Écoles et universités">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-school"/></svg></span>
+                <span class="place-txt"><strong>Écoles et universités</strong><small>Classes, couloirs, sanitaires, cantines.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:2">
+              <button type="button" class="place" data-place="Hôtels et motels">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-hotel"/></svg></span>
+                <span class="place-txt"><strong>Hôtels et motels</strong><small>Chambres, halls et salles de bain.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:3">
+              <button type="button" class="place" data-place="Restaurants et snacks">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-food"/></svg></span>
+                <span class="place-txt"><strong>Restaurants et snacks</strong><small>Salle et cuisine, avant ou après le service.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:4">
+              <button type="button" class="place" data-place="Boîtes de nuit et bars">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-glass"/></svg></span>
+                <span class="place-txt"><strong>Boîtes de nuit et bars</strong><small>Remise en état après la soirée.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:5">
+              <button type="button" class="place" data-place="Cliniques et pharmacies">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-cross"/></svg></span>
+                <span class="place-txt"><strong>Cliniques et pharmacies</strong><small>Désinfection des espaces d’accueil.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:6">
+              <button type="button" class="place" data-place="Églises et lieux de culte">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-church"/></svg></span>
+                <span class="place-txt"><strong>Églises et lieux de culte</strong><small>Salles, bancs et abords.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:7">
+              <button type="button" class="place" data-place="Boutiques et supermarchés">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-shop"/></svg></span>
+                <span class="place-txt"><strong>Boutiques et supermarchés</strong><small>Vitrines, rayons et sols.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:8">
+              <button type="button" class="place" data-place="Salles de fêtes et événements">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-party"/></svg></span>
+                <span class="place-txt"><strong>Salles de fêtes</strong><small>Avant et après vos événements.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:9">
+              <button type="button" class="place" data-place="Immeubles et parties communes">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-build"/></svg></span>
+                <span class="place-txt"><strong>Immeubles</strong><small>Halls, escaliers, parties communes.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:10">
+              <button type="button" class="place" data-place="Fin de chantier" data-service="Grand ménage">
+                <span class="place-ico c-blue"><svg aria-hidden="true"><use href="#i-helmet"/></svg></span>
+                <span class="place-txt"><strong>Fin de chantier</strong><small>Poussière et traces de travaux.</small></span>
+                <span class="place-go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
+              </button>
+            </li>
+            <li style="--k:11">
+              <a class="place place-more" href="https://wa.me/237674488060?text=Bonjour%20Pro-clean%20LCK%2C%20j%27aimerais%20faire%20nettoyer%20%3A%20" target="_blank" rel="noopener">
+                <span class="place-ico c-green"><svg aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+                <span class="place-txt"><strong>Un autre lieu&nbsp;?</strong><small>Écrivez-nous sur WhatsApp.<span class="sr-only"> (nouvelle fenêtre)</span></small></span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -584,10 +605,10 @@
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
-  <script src="config.js?v=11" defer></script>
-  <script src="auth.js?v=11" defer></script>
-  <script src="quartiers.js?v=11" defer></script>
-  <script src="script.js?v=11" defer></script>
-  <script src="reviews.js?v=11" defer></script>
+  <script src="config.js?v=12" defer></script>
+  <script src="auth.js?v=12" defer></script>
+  <script src="quartiers.js?v=12" defer></script>
+  <script src="script.js?v=12" defer></script>
+  <script src="reviews.js?v=12" defer></script>
 </body>
 </html>
