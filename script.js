@@ -224,7 +224,7 @@
       area: F.area.value.trim() || null,
       freq: F.freq.value,
       preferred_date: F.date.value || null,
-      message: F.msg.value.trim() || null,
+      message: [`Type de lieu : ${F.place.value}`, F.msg.value.trim()].filter(Boolean).join('\n'),
     };
     submitBtn.disabled = true;
     status.textContent = 'Envoi en cours…';
@@ -235,6 +235,7 @@
     const lines = [
       `Bonjour Pro-clean LCK, je viens d'envoyer la demande n°${data.id} sur le site.`,
       `• Nom : ${name}`,
+      `• Lieu : ${F.place.value}`,
       `• Service(s) : ${services.join(', ')}`,
       row.area && `• Quartier : ${row.area}`,
       row.preferred_date && `• Date souhaitée : ${new Date(row.preferred_date).toLocaleDateString('fr-FR')}`,
@@ -247,6 +248,14 @@
     done.hidden = false;
     PC.toast('Demande envoyée !');
   });
+
+  /* Choisir un lieu → pré-remplit le formulaire de demande */
+  document.querySelectorAll('.place[data-place]').forEach((b) => b.addEventListener('click', () => {
+    F.place.value = b.dataset.place;
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    PC.toast(`Lieu choisi : ${b.dataset.place}`);
+    setTimeout(() => (F.place.disabled ? form.querySelector('[data-gate]') : F.place)?.focus({ preventScroll: true }), 700);
+  }));
 
   document.getElementById('year').textContent = new Date().getFullYear();
 })();
