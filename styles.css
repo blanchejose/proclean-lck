@@ -263,21 +263,22 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 }
 .why h2, .why h3 { color: #fff; }
 .why .script-inline { color: var(--green-300); }
-.why-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 3.5rem; align-items: center; position: relative; }
-.why-list { display: grid; gap: 1.1rem; }
+.why-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 3.5rem; align-items: center; position: relative; }
+.why .section-head { margin-bottom: 2rem; }
+.why-list { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .why-list li {
-  display: flex; gap: 1.1rem; align-items: flex-start; padding: 1.2rem 1.3rem; border-radius: 18px;
-  background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); transition: background .3s, transform .4s var(--ease);
+  padding: 1.3rem; border-radius: 20px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14);
+  transition: background .3s, transform .4s var(--ease);
 }
-.why-list li:hover { background: rgba(255,255,255,.13); transform: translateX(8px); }
-.why-list h3 { font-size: 1.12rem; margin-bottom: .25rem; }
-.why-list p { margin: 0; color: #c9d8f5; font-size: .98rem; }
+.why-list li:hover { background: rgba(255,255,255,.13); transform: translateY(-6px); }
+.why-list h3 { font-size: 1.08rem; margin: .9rem 0 .15rem; }
+.why-list p { margin: 0; color: #c9d8f5; font-size: .95rem; }
 .why-ico { flex: none; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--green-500); box-shadow: 0 0 0 6px rgba(47,164,74,.25); }
 .why-ico svg { width: 26px; height: 26px; color: #fff; }
 
 /* Avant / après */
 .before-after {
-  --pos: 50%; position: relative; aspect-ratio: 4/5; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg);
+  --pos: 50%; position: relative; aspect-ratio: 1; border-radius: 28px; overflow: hidden; box-shadow: var(--shadow-lg);
   border: 6px solid rgba(255,255,255,.2);
 }
 .ba-dirty, .ba-clean { position: absolute; inset: 0; }
@@ -315,8 +316,8 @@ ul, ol { padding: 0; margin: 0; list-style: none; }
 .ba-handle span { position: absolute; top: 50%; left: 50%; width: 48px; height: 48px; translate: -50% -50%; border-radius: 50%; background: #fff; box-shadow: var(--shadow);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M9 6l-5 6 5 6M15 6l5 6-5 6' fill='none' stroke='%230b3a8c' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-size: 28px; background-repeat: no-repeat; background-position: center; }
-.ba-control { position: relative; display: grid; gap: .5rem; max-width: 520px; margin-top: 1.6rem; margin-right: 0; text-align: center; }
-.ba-control label { font-weight: 600; color: #fff; }
+.ba-control { position: relative; display: grid; gap: .3rem; margin-top: 1rem; text-align: center; }
+.ba-control label { font-weight: 600; font-size: .95rem; color: #c9d8f5; }
 input[type="range"] { width: 100%; accent-color: var(--green-500); height: 44px; cursor: pointer; }
 
 /* Stats */
@@ -327,20 +328,29 @@ input[type="range"] { width: 100%; accent-color: var(--green-500); height: 44px;
 .stat .num { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 900; margin: 0; line-height: 1.1; }
 .stat p:last-child { margin: .2rem 0 0; font-weight: 500; color: #e6f7ea; }
 
-/* Étapes */
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; position: relative; counter-reset: s; }
+/* Étapes — compactes */
+.steps-sec { padding: clamp(3.5rem, 7vw, 5.5rem) 0; }
+.steps-sec .section-head { margin-bottom: 2.4rem; }
+.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; position: relative; max-width: 960px; margin: 0 auto; }
 .steps::before {
-  content: ""; position: absolute; top: 40px; left: 16%; right: 16%; height: 4px; border-radius: 4px;
+  content: ""; position: absolute; top: 50%; left: 8%; right: 8%; height: 3px; border-radius: 3px; translate: 0 -50%;
   background: linear-gradient(90deg, var(--green-500), var(--blue-600)); transform: scaleX(var(--line, 0)); transform-origin: left; transition: transform 1.4s var(--ease);
 }
-.step { text-align: center; position: relative; }
-.step-n {
-  display: grid; place-items: center; width: 84px; height: 84px; margin: 0 auto 1.2rem; border-radius: 50%;
-  background: #fff; border: 4px solid var(--green-500); color: var(--blue-800); font-weight: 900; font-size: 2rem;
-  box-shadow: var(--shadow); position: relative; z-index: 1; transition: transform .5s var(--ease), background .3s, color .3s;
+.step {
+  position: relative; z-index: 1; display: flex; align-items: center; gap: 1rem; padding: 1.1rem 1.2rem;
+  background: #fff; border: 1px solid #dbe7fb; border-radius: 20px; box-shadow: 0 12px 28px -20px rgba(11,58,140,.5);
+  transition: transform .4s var(--ease), box-shadow .4s var(--ease);
 }
-.step:hover .step-n { transform: scale(1.1) rotate(-6deg); background: var(--green-700); color: #fff; }
-.step p { color: var(--muted); }
+.step:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.step-n {
+  flex: none; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: var(--green-50); border: 3px solid var(--green-500); color: var(--blue-800); font-weight: 900; font-size: 1.4rem;
+  transition: transform .5s var(--ease), background .3s, color .3s;
+}
+.step:hover .step-n { transform: rotate(-10deg) scale(1.08); background: var(--green-700); color: #fff; }
+.step h3 { font-size: 1.08rem; margin: 0 0 .1rem; }
+.step p { margin: 0; color: var(--muted); font-size: .95rem; }
+.steps-cta { text-align: center; margin: 2rem 0 0; }
 
 /* Zone */
 .zone { padding: 0 0 2rem; }
@@ -810,3 +820,5 @@ input[readonly] { background: #eef2f8 !important; color: var(--muted) !important
 .q-empty { margin-top: 1rem !important; font-weight: 600; }
 .q-empty a { color: var(--yellow); }
 .nav-menu .btn, .nav-auth .btn { white-space: nowrap; }
+.why-visual { width: 100%; max-width: 400px; justify-self: center; }
+@media (max-width: 400px) { .why-list li { padding: 1rem; } .why-list h3 { font-size: 1rem; } }

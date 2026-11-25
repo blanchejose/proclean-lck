@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Pacifico&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css?v=12" />
+  <link rel="stylesheet" href="styles.css?v=13" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath d='M8 30 32 10l24 20' fill='none' stroke='%230b3a8c' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3Crect x='24' y='30' width='16' height='16' rx='2' fill='%231d6fe0'/%3E%3Cpath d='M46 8c10 0 12 8 8 14-8 0-12-6-8-14z' fill='%2334a853'/%3E%3C/svg%3E" />
 </head>
 <body>
@@ -315,34 +315,24 @@
             <h2 id="why-title">Votre satisfaction est <span class="script-inline">notre priorité&nbsp;!</span></h2>
           </header>
           <ul class="why-list" role="list">
-            <li class="reveal" style="--d:0"><span class="why-ico"><svg aria-hidden="true"><use href="#i-user"/></svg></span><div><h3>Service fiable et professionnel</h3><p>Ponctualité, discrétion et travail soigné à chaque intervention.</p></div></li>
-            <li class="reveal" style="--d:1"><span class="why-ico"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><div><h3>Produits de qualité</h3><p>Des produits efficaces et respectueux de votre santé et de vos surfaces.</p></div></li>
-            <li class="reveal" style="--d:2"><span class="why-ico"><svg aria-hidden="true"><use href="#i-price"/></svg></span><div><h3>Prix compétitifs</h3><p>Des tarifs clairs et adaptés, avec une soumission gratuite avant toute intervention.</p></div></li>
-            <li class="reveal" style="--d:3"><span class="why-ico"><svg aria-hidden="true"><use href="#i-heart"/></svg></span><div><h3>Service personnalisé</h3><p>On s'adapte à vos besoins, vos priorités et votre emploi du temps.</p></div></li>
+            <li class="reveal" style="--d:0"><span class="why-ico"><svg aria-hidden="true"><use href="#i-user"/></svg></span><h3>Fiables</h3><p>Ponctuels, discrets, soignés.</p></li>
+            <li class="reveal" style="--d:1"><span class="why-ico"><svg aria-hidden="true"><use href="#i-leaf"/></svg></span><h3>Produits de qualité</h3><p>Efficaces et sains.</p></li>
+            <li class="reveal" style="--d:2"><span class="why-ico"><svg aria-hidden="true"><use href="#i-price"/></svg></span><h3>Prix justes</h3><p>Soumission gratuite.</p></li>
+            <li class="reveal" style="--d:3"><span class="why-ico"><svg aria-hidden="true"><use href="#i-clock"/></svg></span><h3>Sur mesure</h3><p>7j/7, à votre horaire.</p></li>
           </ul>
         </div>
-        <div class="why-visual reveal" aria-hidden="true">
-          <div class="before-after" id="ba">
+        <div class="why-visual reveal">
+          <div class="before-after" id="ba" aria-hidden="true">
             <div class="ba-dirty"><span class="ba-label">Avant</span></div>
             <div class="ba-clean"><span class="ba-label">Après</span></div>
             <div class="ba-handle"><span></span></div>
           </div>
+          <!-- slider accessible (contrôle réel, l'image au-dessus est décorative) -->
+          <div class="ba-control">
+            <label for="ba-range">Glissez pour comparer avant / après</label>
+            <input type="range" id="ba-range" min="0" max="100" value="50" aria-valuetext="50 % nettoyé" />
+          </div>
         </div>
-      </div>
-      <!-- slider accessible (contrôle réel, l'image au-dessus est décorative) -->
-      <div class="container ba-control reveal">
-        <label for="ba-range">Glissez pour comparer avant / après</label>
-        <input type="range" id="ba-range" min="0" max="100" value="50" aria-valuetext="50 % nettoyé" />
-      </div>
-    </section>
-
-    <!-- CHIFFRES -->
-    <section class="stats" aria-label="Nos engagements en chiffres">
-      <div class="container stats-grid">
-        <div class="stat reveal"><p class="num"><span data-count="100">0</span>%</p><p>Soumission gratuite</p></div>
-        <div class="stat reveal"><p class="num"><span data-count="6">0</span></p><p>Services proposés</p></div>
-        <div class="stat reveal"><p class="num"><span data-count="7">0</span>j/7</p><p>Horaires flexibles</p></div>
-        <div class="stat reveal"><p class="num"><span data-count="1">0</span></p><p>Ville couverte en entier : Douala</p></div>
       </div>
     </section>
 
@@ -351,13 +341,14 @@
       <div class="container">
         <header class="section-head reveal">
           <p class="pill">Comment ça marche</p>
-          <h2 id="steps-title">Une maison propre en <span class="hl">3 étapes</span></h2>
+          <h2 id="steps-title">Propre en <span class="hl">3 étapes</span></h2>
         </header>
         <ol class="steps">
-          <li class="step reveal" style="--d:0"><span class="step-n">1</span><h3>Vous nous contactez</h3><p>Par WhatsApp, e-mail ou via le formulaire ci-dessous.</p></li>
-          <li class="step reveal" style="--d:1"><span class="step-n">2</span><h3>Soumission gratuite</h3><p>On évalue vos besoins et on vous propose un prix clair.</p></li>
-          <li class="step reveal" style="--d:2"><span class="step-n">3</span><h3>On nettoie, vous profitez</h3><p>Notre équipe intervient à l'heure qui vous convient.</p></li>
+          <li class="step reveal" style="--d:0"><span class="step-n">1</span><div><h3>Vous écrivez</h3><p>WhatsApp ou formulaire.</p></div></li>
+          <li class="step reveal" style="--d:1"><span class="step-n">2</span><div><h3>On chiffre</h3><p>Soumission gratuite.</p></div></li>
+          <li class="step reveal" style="--d:2"><span class="step-n">3</span><div><h3>On nettoie</h3><p>À l'heure qui vous convient.</p></div></li>
         </ol>
+        <p class="steps-cta reveal"><a href="#contact" class="btn btn-green magnetic">Demander ma soumission <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></p>
       </div>
     </section>
 
@@ -605,10 +596,10 @@
   </a>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
-  <script src="config.js?v=12" defer></script>
-  <script src="auth.js?v=12" defer></script>
-  <script src="quartiers.js?v=12" defer></script>
-  <script src="script.js?v=12" defer></script>
-  <script src="reviews.js?v=12" defer></script>
+  <script src="config.js?v=13" defer></script>
+  <script src="auth.js?v=13" defer></script>
+  <script src="quartiers.js?v=13" defer></script>
+  <script src="script.js?v=13" defer></script>
+  <script src="reviews.js?v=13" defer></script>
 </body>
 </html>
